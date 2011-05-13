@@ -6,8 +6,6 @@ from django.conf import settings
 for app in settings.INSTALLED_APPS:
     try:
         import_module('%s.models' % (app))
-        import logging
-        logging.debug(app)
     except ImportError:
         pass
 
